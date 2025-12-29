@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>FindYourTrip | Paket Wisata</title>
+
+<style>
+:root{
+  --primary:#22c1dc;
+  --dark:#0f172a;
+  --gray:#64748b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+body{
+  background:#f2f5f9;
+  color:#111;
+}
+
+nav{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:#ffffff;
+  z-index:999;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+nav ul{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 8%;
+  list-style:none;
+}
+nav .logo{
+  font-size:28px;
+  font-weight:800;
+}
+nav .logo span{color:var(--primary)}
+nav .menu a{
+  margin-left:28px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+nav .menu a:hover{color:var(--primary)}
+
+/* ================= HERO VIDEO ================= */
+.hero{
+  position:relative;
+  height:70vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero img{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  z-index:-2;
+}
+
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.65)
+  );
+  z-index:-1;
+}
+
+.hero-content{
+  max-width:900px;
+  padding:0 20px;
+  color:#fff;
+}
+
+.hero-content h1{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:60px;
+  margin-bottom:20px;
+}
+
+.hero-content p{
+  font-size:20px;
+  line-height:1.7;
+  opacity:.95;
+}
+
+/* ================= SECTION ================= */
+section{
+  padding:120px 8% 100px;
+}
+
+.section-title{
+  font-size:42px;
+  margin-bottom:14px;
+  text-align:center;
+}
+
+.section-desc{
+  max-width:900px;
+  margin:0 auto 90px;
+  color:var(--gray);
+  line-height:1.8;
+  text-align:center;
+  font-size:18px;
+}
+
+/* ================= CATEGORY ================= */
+.category{
+  margin-bottom:120px;
+}
+
+.category h2{
+  font-size:34px;
+  margin-bottom:60px;
+  text-align:center;
+}
+
+/* ================= CARD GRID ================= */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:50px;
+}
+
+/* ================= PACKAGE CARD ================= */
+.package-card{
+  background:#ffffff;
+  border-radius:30px;
+  padding:45px;
+  box-shadow:0 30px 70px rgba(0,0,0,.1);
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.badge{
+  display:inline-block;
+  padding:6px 16px;
+  background:rgba(34,193,220,.15);
+  color:var(--primary);
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+.package-title{
+  font-size:26px;
+  margin-bottom:8px;
+}
+
+.package-meta{
+  color:#555;
+  margin-bottom:18px;
+}
+
+.price{
+  font-size:26px;
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:22px;
+}
+
+.package-desc{
+  line-height:1.8;
+  color:#444;
+  margin-bottom:24px;
+}
+
+/* LIST STYLE */
+.package-card ul{
+  padding-left:18px;
+  line-height:1.8;
+  margin-bottom:22px;
+}
+
+.sub-title{
+  font-weight:700;
+  margin-bottom:8px;
+  margin-top:18px;
+}
+
+/* ITINERARY */
+.itinerary{
+  border-top:1px solid #eee;
+  padding-top:20px;
+  margin-top:20px;
+}
+
+.itinerary p{
+  margin-bottom:12px;
+  line-height:1.7;
+}
+
+/* ================= FOOTER (SAMA DENGAN INDEX) ================= */
+footer{
+  background:#0f172a;
+  color:#fff;
+  padding:70px 8%;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+footer a{color:#93c5fd;text-decoration:none}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul>
+   <li class="logo">PT Find<span>Your</span>Trip <span>Global</span></li>
+    <li class="menu">
+       <a href="index.html">Home</a>
+      <a href="find-trip.html">Find Trip</a>
+      <a href="booking.html">Booking</a>
+      <a href="organization.html">Organization</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="support.html">Support</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="travel.png" alt="FindYourTrip">
+  <div class="hero-content">
+    <h1>Paket Wisata FindYourTrip</h1>
+    <p>Pilihan paket perjalanan terbaik domestik & internasional</p>
+  </div>
+</div>
+
+<section>
+  <h2 class="section-title">Paket Wisata Kami</h2>
+  <p class="section-desc">
+    Seluruh paket dirancang secara profesional untuk memberikan
+    kenyamanan, keamanan, dan pengalaman perjalanan terbaik.
+  </p>
+
+  <!-- ================= DOMESTIK ================= -->
+  <div class="category">
+    <h2>Paket Domestik</h2>
+
+    <div class="card-grid">
+
+      <!-- BALI -->
+      <div class="package-card">
+        <span class="badge">DOMESTIK</span>
+        <div class="package-title">Bali Explorer Adventure</div>
+        <div class="package-meta">5 Hari 4 Malam</div>
+        <div class="price">Rp5.250.000 / orang</div>
+
+        <p class="package-desc">
+          Jelajahi pesona Bali dari budaya Ubud, keindahan Nusa Penida,
+          hingga sunset ikonik Kuta.
+        </p>
+
+        <div class="sub-title">Destinasi</div>
+        <ul>
+          <li>Denpasar – Ubud – Nusa Penida – Kuta</li>
+        </ul>
+
+        <div class="sub-title">Fasilitas</div>
+        <ul>
+          <li>Hotel melati / A-Class sesuai paket</li>
+          <li>Transport lokal & antar-jemput bandara</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Tiket objek wisata utama</li>
+        </ul>
+
+        <div class="sub-title">Highlights</div>
+        <ul>
+          <li>Tanah Lot Sunset</li>
+          <li>Ubud Rice Terrace</li>
+          <li>Snorkeling Nusa Penida</li>
+        </ul>
+
+        <div class="itinerary">
+          <div class="sub-title">Itinerary Singkat</div>
+          <p>Hari 1: Kedatangan – Ubud</p>
+          <p>Hari 2: Ubud – Tegalalang – Tirta Empul</p>
+          <p>Hari 3: Nusa Penida – Kuta</p>
+          <p>Hari 4: Kuta – Tanah Lot – Jimbaran</p>
+          <p>Hari 5: Kepulangan</p>
+        </div>
+      </div>
+
+      <!-- YOGYAKARTA -->
+      <div class="package-card">
+        <span class="badge">DOMESTIK</span>
+        <div class="package-title">Yogyakarta Culture & Heritage</div>
+        <div class="package-meta">3 Hari 2 Malam</div>
+        <div class="price">Rp3.000.000 / orang</div>
+
+        <p class="package-desc">
+          Nikmati kekayaan budaya dan sejarah Yogyakarta
+          dari candi megah hingga pantai eksotis.
+        </p>
+
+        <div class="itinerary">
+          <p>Hari 1: City Tour Yogyakarta</p>
+          <p>Hari 2: Borobudur – Prambanan</p>
+          <p>Hari 3: Parangtritis – Kepulangan</p>
+        </div>
+      </div>
+
+      <!-- LABUAN BAJO -->
+      <div class="package-card">
+        <span class="badge">DOMESTIK</span>
+        <div class="package-title">Labuan Bajo Komodo Adventure</div>
+        <div class="package-meta">4 Hari 3 Malam</div>
+        <div class="price">Rp7.200.000 / orang</div>
+
+        <p class="package-desc">
+          Island hopping premium dengan panorama eksotis
+          dan aktivitas outdoor terbaik di Indonesia Timur.
+        </p>
+
+        <div class="itinerary">
+          <p>Hari 1: Kedatangan Labuan Bajo</p>
+          <p>Hari 2: Padar – Komodo – Pink Beach</p>
+          <p>Hari 3: Manta Point – Free Time</p>
+          <p>Hari 4: Kepulangan</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= INTERNASIONAL ================= -->
+  <div class="category">
+    <h2>Paket Internasional</h2>
+
+    <div class="card-grid">
+
+      <div class="package-card">
+        <span class="badge">INTERNASIONAL</span>
+        <div class="package-title">Singapore City Highlights</div>
+        <div class="package-meta">3 Hari 2 Malam</div>
+        <div class="price">Rp8.000.000 / orang</div>
+
+        <div class="itinerary">
+          <p>Hari 1: City Tour Singapore</p>
+          <p>Hari 2: Universal Studios / Gardens by the Bay</p>
+          <p>Hari 3: Kepulangan</p>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <span class="badge">INTERNASIONAL</span>
+        <div class="package-title">Thailand Fun Explorer</div>
+        <div class="package-meta">5 Hari 4 Malam</div>
+        <div class="price">Rp9.500.000 / orang</div>
+
+        <div class="itinerary">
+          <p>Hari 1: Kedatangan Bangkok</p>
+          <p>Hari 2: Bangkok Culture Tour</p>
+          <p>Hari 3: Bangkok – Pattaya</p>
+          <p>Hari 4: Pattaya Free Time</p>
+          <p>Hari 5: Kepulangan</p>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <span class="badge">INTERNASIONAL</span>
+        <div class="package-title">Malaysia City & Culture Experience</div>
+        <div class="package-meta">4 Hari 3 Malam</div>
+        <div class="price">Rp6.500.000 / orang</div>
+
+        <div class="itinerary">
+          <p>Hari 1: Kuala Lumpur City Tour</p>
+          <p>Hari 2: Batu Caves – Genting Highlands</p>
+          <p>Hari 3: Putrajaya – Shopping</p>
+          <p>Hari 4: Kepulangan</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>PT FindYourTrip Global</h3>
+      <p>Travel together, better.</p>
+    </div>
+    <div>
+      <a href="#">Privacy Policy</a><br>
+      <a href="#">Terms & Conditions</a>
+    </div>
+    <div>
+      Instagram • Twitter • Facebook
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

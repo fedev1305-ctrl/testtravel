@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>FindYourTrio | Reviews</title>
+
+<style>
+:root{
+  --primary:#22c1dc;
+  --dark:#0f172a;
+  --gray:#64748b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+body{
+  background:#f2f5f9;
+  color:#111;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:#ffffff;
+  z-index:999;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+nav ul{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 8%;
+  list-style:none;
+}
+nav .logo{
+  font-size:28px;
+  font-weight:800;
+}
+nav .logo span{color:var(--primary)}
+nav .menu a{
+  margin-left:28px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+nav .menu a:hover{color:var(--primary)}
+
+.hero{
+  position:relative;
+  height:55vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero img{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  z-index:-2;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.65)
+  );
+  z-index:-1;
+}
+.hero-content{
+  color:#fff;
+}
+.hero-content h1{
+  font-size:52px;
+  margin-bottom:14px;
+}
+.hero-content p{
+  font-size:20px;
+  opacity:.95;
+}
+
+section{
+  padding:120px 8% 100px;
+}
+.section-title{
+  font-size:42px;
+  text-align:center;
+}
+.section-desc{
+  max-width:800px;
+  margin:20px auto 90px;
+  color:var(--gray);
+  text-align:center;
+  font-size:18px;
+}
+
+/* ================= GRID ================= */
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+/* ================= REVIEW CARD ================= */
+.review-card{
+  background:#fff;
+  border-radius:30px;
+  padding:40px;
+  box-shadow:0 30px 60px rgba(0,0,0,.1);
+  display:flex;
+  flex-direction:column;
+}
+
+.stars{
+  color:#facc15;
+  font-size:18px;
+  margin-bottom:14px;
+}
+
+.review-text{
+  font-size:16px;
+  line-height:1.8;
+  color:#444;
+  margin-bottom:30px;
+}
+
+.user{
+  margin-top:auto;
+  border-top:1px solid #eee;
+  padding-top:20px;
+}
+
+.user-name{
+  font-weight:700;
+}
+.user-trip{
+  color:var(--gray);
+  font-size:14px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#0f172a;
+  color:#fff;
+  padding:70px 8%;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+footer a{
+  color:#93c5fd;
+  text-decoration:none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .review-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul>
+     <li class="logo">PT Find<span>Your</span>Trip <span>Global</span></li>
+    <li class="menu">
+     <a href="index.html">Home</a>
+      <a href="find-trip.html">Find Trip</a>
+      <a href="booking.html">Booking</a>
+      <a href="organization.html">Organization</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="support.html">Support</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+ <img src="travel.png" alt="FindYourTrio Support">
+  <div class="hero-content">
+    <h1>User Reviews</h1>
+    <p>Pengalaman nyata dari para traveler FindYourTrip</p>
+  </div>
+</div>
+
+
+
+<section>
+  <h2 class="section-title">Apa Kata Mereka?</h2>
+  <p class="section-desc">
+    Kepuasan pelanggan adalah prioritas kami.
+    Berikut beberapa ulasan dari traveler yang telah bergabung bersama FindYourTrip.
+  </p>
+
+  <div class="review-grid">
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">
+        Trip terbaik yang pernah saya ikuti. Timnya profesional,
+        itinerary rapi, dan dapat teman perjalanan yang seru.
+      </div>
+      <div class="user">
+        <div class="user-name">Andi Pratama</div>
+        <div class="user-trip">Bali Explorer Adventure</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <div class="review-text">
+        Pengalaman liburan yang aman dan nyaman.
+        Sangat cocok buat solo traveler yang ingin cari trip perjalanan.
+      </div>
+      <div class="user">
+        <div class="user-name">Siti Rahma</div>
+        <div class="user-trip">Singapore City Highlights</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">
+        Awalnya ragu, tapi ternyata seru banget.
+        Trio solid, guide ramah, dan spot wisatanya mantap.
+      </div>
+      <div class="user">
+        <div class="user-name">Rizky Maulana</div>
+        <div class="user-trip">Labuan Bajo Komodo Adventure</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>FindYourTrip</h3>
+      <p>Travel together, better.</p>
+    </div>
+    <div>
+      <a href="#">Privacy Policy</a><br>
+      <a href="#">Terms & Conditions</a>
+    </div>
+    <div>
+      Instagram • Twitter • Facebook
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>FindYourTrip | Travel Together</title>
+
+<style>
+:root{
+  --primary:#22c1dc;
+  --dark:#0f172a;
+  --gray:#64748b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+body{
+  background:#f2f5f9;
+  color:#111;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:#ffffff;
+  z-index:999;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+nav ul{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 8%;
+  list-style:none;
+}
+nav .logo{
+  font-size:28px;
+  font-weight:800;
+}
+nav .logo span{color:var(--primary)}
+nav .menu a{
+  margin-left:28px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+nav .menu a:hover{color:var(--primary)}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.6));
+}
+.hero-content{
+  max-width:900px;
+  padding:0 20px;
+  color:#fff;
+}
+.hero-content h1{
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:72px;
+  margin-bottom:25px;
+}
+.hero-content p{
+  font-size:20px;
+  line-height:1.7;
+  margin-bottom:45px;
+}
+.hero-content .cta{
+  padding:18px 52px;
+  font-size:18px;
+  border-radius:50px;
+  border:none;
+  background:var(--primary);
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* ================= SECTION ================= */
+section{
+  padding:120px 8%;
+}
+
+/* ================= ABOUT US ================= */
+.about{
+  background:#ffffff;
+}
+
+.about-wrapper{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:60px;
+  max-width:1200px;
+  margin:0 auto 100px;
+  align-items:center;
+}
+
+.about-logo{
+  display:flex;
+  justify-content:center;
+}
+
+.about-logo img{
+  max-width:220px;
+}
+
+.about-text h2{
+  font-size:40px;
+  margin-bottom:18px;
+}
+
+.about-text p{
+  color:var(--gray);
+  line-height:1.9;
+  font-size:18px;
+  text-align:justify;
+}
+
+/* ================= VISI MISI ================= */
+.vm-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:50px;
+  max-width:1100px;
+  margin:0 auto 100px;
+}
+
+.vm-card{
+  background:#ffffff;
+  padding:45px;
+  border-radius:26px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
+
+.vm-card h3{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.vm-card p{
+  color:#555;
+  line-height:1.8;
+  font-size:16px;
+  text-align:justify;
+}
+
+.mission-list{
+  padding-left:20px;
+}
+.mission-list li{
+  margin-bottom:14px;
+  line-height:1.8;
+  color:#555;
+}
+
+/* ================= LOGO & COLOR MEANING (NEW) ================= */
+.logo-meaning-wrapper{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:50px;
+  align-items:flex-start;
+}
+
+.logo-box{
+  background:#fff;
+  padding:50px;
+  border-radius:30px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo-box img{
+  max-width:220px;
+}
+
+.color-cards{
+  display:grid;
+  gap:30px;
+}
+
+.color-card{
+  background:#fff;
+  padding:45px;
+  border-radius:30px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
+
+.color-card h3{
+  font-size:26px;
+  margin-bottom:16px;
+}
+
+.color-card p{
+  color:#555;
+  line-height:1.9;
+  text-align:justify;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#0f172a;
+  color:#fff;
+  padding:70px 8%;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .about-wrapper,
+  .vm-grid,
+  .logo-meaning-wrapper{
+    grid-template-columns:1fr;
+  }
+  .logo-box{
+    margin-bottom:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li class="logo">PT Find<span>Your</span>Trip <span>Global</span></li>
+    <li class="menu">
+      <a href="#home">Home</a>
+      <a href="find-trip.html">Find Trip</a>
+      <a href="booking.html">Booking</a>
+      <a href="organization.html">Organization</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="support.html">Support</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <video autoplay muted loop playsinline>
+    <source src="travell.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <h1>Jelajahi Dunia Bersama Trip Terbaik</h1>
+    <p>
+      Temukan teman perjalanan sefrekuensi dan rasakan
+      pengalaman traveling yang aman, seru, dan berkesan.
+    </p>
+    <button onclick="location.href='find-trip.html'" class="cta">
+      Mulai Petualangan
+    </button>
+  </div>
+</div>
+
+<!-- ABOUT US -->
+<section class="about">
+
+  <div class="about-wrapper">
+    <div class="about-logo">
+      <img src="logo.png" alt="FindYourTrip Logo">
+    </div>
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        PT FindYourTrip Global is a trusted tour and travel company based in Batam,
+        Kepulauan Riau. We specialize in providing authentic, comfortable, and
+        memorable travel experiences for both domestic and international travelers.
+      </p>
+    </div>
+  </div>
+
+  <!-- VISI MISI -->
+  <div class="vm-grid">
+    <div class="vm-card">
+      <h3>Vision</h3>
+      <p>
+        To become a trusted and leading tour and travel company that connects
+        travelers around the world with authentic, comfortable, and memorable
+        travel experiences.
+      </p>
+    </div>
+
+    <div class="vm-card">
+      <h3>Mission</h3>
+      <ul class="mission-list">
+        <li>To provide the best travel services</li>
+        <li>To promote Indonesian tourism destinations to the international market</li>
+        <li>To establish international partnerships</li>
+        <li>To support sustainable tourism</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- LOGO & COLOR MEANING (ADDED BELOW) -->
+  <div class="logo-meaning-wrapper">
+
+    <div class="logo-box">
+      <img src="logo.png" alt="FindYourTrip Logo">
+    </div>
+
+    <div class="color-cards">
+      <div class="color-card">
+        <h3>Meaning of the Logo</h3>
+        <p>
+        The globe represents the world and global destinations — symbolizing that FindYourTrip is ready to help people explore the world without limits. The airplane circling the globe illustrates journeys that connect the entire world, representing a dynamic, fast, and wide-reaching travel service. The circular motion also signifies an endless journey (continuous journey) and comprehensive service from the beginning to the end of each trip.
+        </p>
+      </div>
+
+      <div class="color-card">
+        <h3>Meaning of the Colors</h3>
+        <p>
+        Blue: Represents trust, professionalism, and calmness. Blue is also often associated with the sky and the sea — the two main elements of travel and tourism.
+        </p>
+        <p>
+         Yellow: This color symbolizes energy, optimism, and happiness — reflecting the positive spirit of traveling and the cheerful service provided. 
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>PT FindYourTrip Global</h3>
+      <p>Travel together, better.</p>
+    </div>
+    <div>
+      <a href="#">Privacy Policy</a><br>
+      <a href="#">Terms & Conditions</a>
+    </div>
+    <div>
+      Instagram • Twitter • Facebook
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>FindYourTrio | Booking</title>
+
+<style>
+:root{
+  --primary:#22c1dc;
+  --dark:#0f172a;
+  --gray:#64748b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+}
+
+body{
+  background:#f2f5f9;
+  color:#111;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:#ffffff;
+  z-index:999;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+nav ul{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 8%;
+  list-style:none;
+}
+nav .logo{
+  font-size:28px;
+  font-weight:800;
+}
+nav .logo span{color:var(--primary)}
+nav .menu a{
+  margin-left:28px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+nav .menu a:hover{color:var(--primary)}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  height:55vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero img{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  z-index:-2;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.65)
+  );
+  z-index:-1;
+}
+.hero-content{
+  color:#fff;
+}
+.hero-content h1{
+  font-size:52px;
+  margin-bottom:14px;
+}
+.hero-content p{
+  font-size:20px;
+  opacity:.95;
+}
+
+/* ================= SECTION ================= */
+section{
+  padding:120px 8% 100px;
+  display:flex;
+  justify-content:center;
+}
+
+/* ================= BOOKING CARD ================= */
+.booking-card{
+  background:#fff;
+  width:100%;
+  max-width:520px;
+  border-radius:30px;
+  padding:50px;
+  box-shadow:0 30px 70px rgba(0,0,0,.1);
+}
+
+.booking-card h2{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.booking-card p{
+  color:var(--gray);
+  margin-bottom:35px;
+}
+
+/* FORM */
+.booking-card label{
+  font-weight:600;
+  margin-bottom:8px;
+  display:block;
+}
+
+.booking-card input,
+.booking-card select{
+  width:100%;
+  padding:14px 16px;
+  margin-bottom:22px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  font-size:15px;
+}
+
+.booking-card input:focus,
+.booking-card select:focus{
+  outline:none;
+  border-color:var(--primary);
+}
+
+/* BUTTON */
+.btn-submit{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(135deg,#22c1dc,#0ea5e9);
+  color:#fff;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+.btn-submit:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(34,193,220,.45);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#0f172a;
+  color:#fff;
+  padding:70px 8%;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+footer a{
+  color:#93c5fd;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li class="logo">PT Find<span>Your</span>Trip <span>Global</span></li>
+    <li class="menu">
+      <a href="index.html">Home</a>
+      <a href="find-trip.html">Find Trip</a>
+      <a href="booking.html">Booking</a>
+      <a href="organization.html">Organization</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="support.html">Support</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="travel.png" alt="FindYourTrio Booking">
+  <div class="hero-content">
+    <h1>Booking & Payment</h1>
+    <p>Isi data Anda untuk memesan paket perjalanan</p>
+  </div>
+</div>
+
+<!-- BOOKING FORM -->
+<section>
+  <div class="booking-card">
+    <h2>Form Booking</h2>
+    <p>Pastikan data yang Anda isi sudah benar sebelum melanjutkan.</p>
+
+    <form>
+      <label>Nama Lengkap</label>
+      <input type="text" placeholder="Masukkan nama lengkap">
+
+      <label>Email</label>
+      <input type="email" placeholder="Masukkan email aktif">
+
+      <label>Pilih Paket Wisata</label>
+      <select>
+        <option disabled selected>Pilih Paket</option>
+        <option>Bali Explorer Adventure</option>
+        <option>Yogyakarta Culture & Heritage</option>
+        <option>Labuan Bajo Komodo Adventure</option>
+        <option>Singapore City Highlights</option>
+        <option>Thailand Fun Explorer</option>
+      </select>
+
+      <label>Metode Pembayaran</label>
+      <select>
+        <option disabled selected>Pilih Metode</option>
+        <option>Transfer Bank</option>
+        <option>E-Wallet</option>
+        <option>Kartu Kredit</option>
+      </select>
+
+      <button class="btn-submit">Konfirmasi Booking</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>FindYourTrip</h3>
+      <p>Travel together, better.</p>
+    </div>
+    <div>
+      <a href="#">Privacy Policy</a><br>
+      <a href="#">Terms & Conditions</a>
+    </div>
+    <div>
+      Instagram • Twitter • Facebook
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
