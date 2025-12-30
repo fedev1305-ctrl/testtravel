@@ -211,18 +211,152 @@ section{
   line-height:1.7;
 }
 
-/* ================= FOOTER (SAMA DENGAN INDEX) ================= */
-footer{
-  background:#0f172a;
-  color:#fff;
-  padding:70px 8%;
+/* ================= FOOTER ================= */
+.footer{
+  background:linear-gradient(180deg,#0b1220,#020617);
+  color:#cbd5f5;
+  padding:90px 8% 0;
 }
-.footer-grid{
+
+.footer-container{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
+  grid-template-columns:1.3fr 1fr 1fr 1fr 1.6fr;
+  gap:50px;
+  padding-bottom:70px;
 }
-footer a{color:#93c5fd;text-decoration:none}
+
+.footer-brand h2{
+  font-size:32px;
+  color:#fff;
+  font-weight:800;
+}
+.footer-brand span{
+  color:var(--primary);
+}
+.footer-brand p{
+  margin-top:12px;
+  color:#94a3b8;
+}
+
+.footer-col h4,
+.footer-subscribe h4{
+  font-size:15px;
+  margin-bottom:22px;
+  color:#fff;
+  letter-spacing:1px;
+}
+
+.footer-col a{
+  display:block;
+  text-decoration:none;
+  color:#94a3b8;
+  margin-bottom:14px;
+  font-size:14px;
+}
+.footer-col a:hover{
+  color:#fff;
+}
+
+.footer-subscribe p{
+  font-size:14px;
+  color:#94a3b8;
+  margin-bottom:18px;
+}
+
+.subscribe-box{
+  display:flex;
+  gap:10px;
+}
+.subscribe-box input{
+  flex:1;
+  padding:14px 16px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+.subscribe-box button{
+  padding:14px 22px;
+  border:none;
+  border-radius:10px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* PARTNER */
+.footer-partner{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:35px 0;
+  text-align:center;
+}
+.footer-partner h4{
+  color:#fff;
+  margin-bottom:8px;
+}
+.footer-partner p{
+  color:#94a3b8;
+}
+
+/* BOTTOM */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:25px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  color:#94a3b8;
+}
+.footer-social a{
+  margin-left:18px;
+  text-decoration:none;
+  color:#94a3b8;
+}
+.footer-social a:hover{
+  color:#fff;
+}
+
+@media(max-width:1000px){
+  .footer-container{
+    grid-template-columns:1fr 1fr;
+  }
+}
+@media(max-width:600px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+  .footer-bottom{
+    flex-direction:column;
+    gap:15px;
+  }
+}
+
+
+/* PACKAGE IMAGE - FINAL FIX */
+.package-image{
+  width:100%;
+  aspect-ratio: 4 / 3;  
+  border-radius:22px;
+  overflow:hidden;
+  margin-bottom:22px;
+  background:#f1f5f9;
+}
+
+.package-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top; /* fokus ke atas (patung, candi, dll) */
+  transition:.4s ease;
+}
+
+.package-card:hover .package-image img{
+  transform:scale(1.04);
+}
+
+
+
 </style>
 </head>
 
@@ -247,104 +381,257 @@ footer a{color:#93c5fd;text-decoration:none}
 <div class="hero">
   <img src="travel.png" alt="FindYourTrip">
   <div class="hero-content">
-    <h1>Paket Wisata FindYourTrip</h1>
-    <p>Pilihan paket perjalanan terbaik domestik & internasional</p>
+   <h1>FindYourTrip Tour Packages</h1>
+    <p>The best domestic & international travel package options</p>
   </div>
 </div>
 
 <section>
-  <h2 class="section-title">Paket Wisata Kami</h2>
+  <h2 class="section-title">Our Tour Packages</h2>
   <p class="section-desc">
-    Seluruh paket dirancang secara profesional untuk memberikan
-    kenyamanan, keamanan, dan pengalaman perjalanan terbaik.
+   All packages are professionally designed to provide comfort, safety, and the best travel experience.
   </p>
 
   <!-- ================= DOMESTIK ================= -->
   <div class="category">
-    <h2>Paket Domestik</h2>
+<h2>Domestic Package</h2>
 
     <div class="card-grid">
 
       <!-- BALI -->
-      <div class="package-card">
-        <span class="badge">DOMESTIK</span>
-        <div class="package-title">Bali Explorer Adventure</div>
-        <div class="package-meta">5 Hari 4 Malam</div>
-        <div class="price">Rp5.250.000 / orang</div>
+     <div class="package-card">
+  <span class="badge">DOMESTIC</span>
 
-        <p class="package-desc">
-          Jelajahi pesona Bali dari budaya Ubud, keindahan Nusa Penida,
-          hingga sunset ikonik Kuta.
-        </p>
+  <div class="package-image">
+    <img src="bali.jpeg" alt="Bali Explorer Adventure">
+  </div>
 
-        <div class="sub-title">Destinasi</div>
-        <ul>
-          <li>Denpasar – Ubud – Nusa Penida – Kuta</li>
-        </ul>
+  <div class="package-title">Bali Explorer Adventure</div>
+  <div class="package-meta">5 Days 4 Nights</div>
+  <div class="price">Starting from Rp5.250.000 / person</div>
 
-        <div class="sub-title">Fasilitas</div>
-        <ul>
-          <li>Hotel melati / A-Class sesuai paket</li>
-          <li>Transport lokal & antar-jemput bandara</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Tiket objek wisata utama</li>
-        </ul>
+  <p class="package-desc">
+    Discover the beauty of Bali, from the cultural heart of Ubud, the stunning
+    landscapes of Nusa Penida, to the iconic sunset views of Kuta, combined with
+    authentic Balinese cuisine.
+  </p>
 
-        <div class="sub-title">Highlights</div>
-        <ul>
-          <li>Tanah Lot Sunset</li>
-          <li>Ubud Rice Terrace</li>
-          <li>Snorkeling Nusa Penida</li>
-        </ul>
+  <div class="sub-title">Destinations</div>
+  <ul>
+    <li>Denpasar – Ubud – Nusa Penida – Kuta</li>
+  </ul>
 
-        <div class="itinerary">
-          <div class="sub-title">Itinerary Singkat</div>
-          <p>Hari 1: Kedatangan – Ubud</p>
-          <p>Hari 2: Ubud – Tegalalang – Tirta Empul</p>
-          <p>Hari 3: Nusa Penida – Kuta</p>
-          <p>Hari 4: Kuta – Tanah Lot – Jimbaran</p>
-          <p>Hari 5: Kepulangan</p>
-        </div>
-      </div>
+  <div class="sub-title">Facilities</div>
+  <ul>
+    <li>Budget / A-Class hotel based on selected package</li>
+    <li>Local transportation & airport transfers</li>
+    <li>Professional tour guide</li>
+    <li>Entrance tickets to main tourist attractions</li>
+    <li>Accommodation & breakfast based on itinerary</li>
+  </ul>
+
+  <div class="sub-title">Included</div>
+  <ul>
+    <li>Meals as per program</li>
+    <li>Free entrance to tourist attractions</li>
+    <li>Guide service fee</li>
+  </ul>
+
+  <div class="sub-title">Excluded</div>
+  <ul>
+    <li>Flight tickets</li>
+    <li>Personal expenses</li>
+  </ul>
+
+  <div class="sub-title">Highlights</div>
+  <ul>
+    <li>Tanah Lot Sunset</li>
+    <li>Ubud Rice Terrace</li>
+    <li>Snorkeling at Nusa Penida</li>
+    <li>Shopping & Culinary Experience in Kuta</li>
+  </ul>
+
+  <div class="itinerary">
+    <div class="sub-title">Brief Itinerary</div>
+
+    <p><strong>Day 1: ARRIVAL DENPASAR – UBUD (Dinner)</strong><br>
+      Meet at I Gusti Ngurah Rai International Airport and transfer to Ubud.
+      Hotel check-in and short rest. Afternoon orientation tour visiting Ubud Palace,
+      Saraswati Temple, and Ubud Art Market. Dinner at a local restaurant.
+    </p>
+
+    <p><strong>Day 2: UBUD – TEGALALANG – TIRTA EMPUL (Breakfast, Dinner)</strong><br>
+      Breakfast at hotel. Visit Tegalalang Rice Terrace, Tirta Empul Temple,
+      Tegenungan Waterfall, and a local coffee plantation. Return to hotel and
+      dinner at a local restaurant.
+    </p>
+
+    <p><strong>Day 3: UBUD – NUSA PENIDA – KUTA (Breakfast, Lunch)</strong><br>
+      Morning transfer to Sanur Harbor and cross to Nusa Penida. Visit Kelingking Beach,
+      Broken Beach, and Angel’s Billabong. Lunch followed by snorkeling activity.
+      Return to Bali and transfer to Kuta.
+    </p>
+
+    <p><strong>Day 4: KUTA – TANAH LOT – JIMBARAN (Breakfast, Dinner)</strong><br>
+      Breakfast at hotel. Free time at Kuta Beach. Afternoon visit to Tanah Lot
+      Temple for sunset view. Romantic seafood dinner at Jimbaran Beach.
+    </p>
+
+    <p><strong>Day 5: KUTA – DENPASAR (Breakfast)</strong><br>
+      Breakfast and free time until check-out. Transfer to airport for departure.
+      Tour ends.
+    </p>
+  </div>
+</div>
+
 
       <!-- YOGYAKARTA -->
-      <div class="package-card">
-        <span class="badge">DOMESTIK</span>
-        <div class="package-title">Yogyakarta Culture & Heritage</div>
-        <div class="package-meta">3 Hari 2 Malam</div>
-        <div class="price">Rp3.000.000 / orang</div>
+<div class="package-card">
+  <span class="badge">DOMESTIC</span>
 
-        <p class="package-desc">
-          Nikmati kekayaan budaya dan sejarah Yogyakarta
-          dari candi megah hingga pantai eksotis.
-        </p>
+  <div class="package-image">
+    <img src="jogja.jpeg" alt="Yogyakarta Culture & Heritage">
+  </div>
 
-        <div class="itinerary">
-          <p>Hari 1: City Tour Yogyakarta</p>
-          <p>Hari 2: Borobudur – Prambanan</p>
-          <p>Hari 3: Parangtritis – Kepulangan</p>
-        </div>
-      </div>
+  <div class="package-title">Yogyakarta Culture & Heritage</div>
+  <div class="package-meta">3 Days 2 Nights</div>
+  <div class="price">Starting from Rp3.000.000 / person</div>
+
+  <p class="package-desc">
+    Experience the rich culture and historical heritage of Yogyakarta,
+    from magnificent temples to exotic beach destinations.
+  </p>
+
+  <div class="sub-title">Destinations</div>
+  <ul>
+    <li>Yogyakarta – Borobudur – Prambanan – Parangtritis</li>
+  </ul>
+
+  <div class="sub-title">Facilities</div>
+  <ul>
+    <li>2 / 3-star hotel accommodation</li>
+    <li>Air-conditioned transportation during the tour</li>
+    <li>Local professional guide</li>
+    <li>Entrance tickets to main tourist attractions</li>
+  </ul>
+
+  <div class="sub-title">Included</div>
+  <ul>
+    <li>Meals as per itinerary</li>
+    <li>Free entrance to tourist attractions</li>
+    <li>Guide service fee</li>
+  </ul>
+
+  <div class="sub-title">Excluded</div>
+  <ul>
+    <li>Flight or train tickets</li>
+    <li>Personal expenses</li>
+  </ul>
+
+  <div class="sub-title">Highlights</div>
+  <ul>
+    <li>Borobudur Sunrise (optional)</li>
+    <li>Keraton Palace & Malioboro Street</li>
+    <li>Parangtritis Beach Sunset</li>
+  </ul>
+
+  <div class="itinerary">
+    <div class="sub-title">Brief Itinerary</div>
+
+    <p><strong>Day 1: ARRIVAL YOGYAKARTA – CITY TOUR (No Meals)</strong><br>
+      Upon arrival in Yogyakarta, guests will be picked up and transferred
+      to the hotel. In the afternoon, enjoy a city tour visiting Keraton
+      Yogyakarta, Tamansari Water Castle, and Malioboro Street.
+    </p>
+
+    <p><strong>Day 2: BOROBUDUR – PRAMBANAN (Breakfast, Lunch)</strong><br>
+      After breakfast, visit the magnificent Borobudur Temple.
+      Lunch at a local restaurant, then continue the tour to Prambanan Temple
+      before returning to the hotel.
+    </p>
+
+    <p><strong>Day 3: PARANGTRITIS – DEPARTURE (Breakfast)</strong><br>
+      Breakfast and hotel check-out. Visit Parangtritis Beach before transfer
+      to the airport or train station for departure. Tour ends.
+    </p>
+  </div>
+</div>
 
       <!-- LABUAN BAJO -->
-      <div class="package-card">
-        <span class="badge">DOMESTIK</span>
-        <div class="package-title">Labuan Bajo Komodo Adventure</div>
-        <div class="package-meta">4 Hari 3 Malam</div>
-        <div class="price">Rp7.200.000 / orang</div>
+<div class="package-card">
+  <span class="badge">DOMESTIC</span>
 
-        <p class="package-desc">
-          Island hopping premium dengan panorama eksotis
-          dan aktivitas outdoor terbaik di Indonesia Timur.
-        </p>
+  <div class="package-image">
+    <img src="labuhan.jpeg" alt="Labuan Bajo Komodo Adventure">
+  </div>
 
-        <div class="itinerary">
-          <p>Hari 1: Kedatangan Labuan Bajo</p>
-          <p>Hari 2: Padar – Komodo – Pink Beach</p>
-          <p>Hari 3: Manta Point – Free Time</p>
-          <p>Hari 4: Kepulangan</p>
-        </div>
-      </div>
+  <div class="package-title">Labuan Bajo Komodo Adventure</div>
+  <div class="package-meta">4 Days 3 Nights</div>
+  <div class="price">Starting from Rp7.200.000 / person</div>
+
+  <p class="package-desc">
+    Premium island hopping experience with exotic landscapes
+    and the best outdoor activities in Eastern Indonesia.
+  </p>
+
+  <div class="sub-title">Destinations</div>
+  <ul>
+    <li>Labuan Bajo – Komodo Island – Padar Island – Pink Beach</li>
+  </ul>
+
+  <div class="sub-title">Facilities</div>
+  <ul>
+    <li>Hotel accommodation & tourist boat</li>
+    <li>Transportation between destinations</li>
+    <li>Professional guide & Komodo National Park entrance ticket</li>
+    <li>Snorkeling equipment</li>
+  </ul>
+
+  <div class="sub-title">Included</div>
+  <ul>
+    <li>Meals as per program</li>
+    <li>Free entrance to tourist attractions</li>
+    <li>Guide service fee</li>
+  </ul>
+
+  <div class="sub-title">Excluded</div>
+  <ul>
+    <li>Flight tickets</li>
+    <li>Personal expenses</li>
+  </ul>
+
+  <div class="sub-title">Highlights</div>
+  <ul>
+    <li>Komodo Island trekking</li>
+    <li>Padar Island sunset</li>
+    <li>Snorkeling at Pink Beach</li>
+  </ul>
+
+  <div class="itinerary">
+    <div class="sub-title">Brief Itinerary</div>
+
+    <p><strong>Day 1: ARRIVAL LABUAN BAJO (No Meals)</strong><br>
+      Arrival at Komodo Airport. Meet and greet, followed by a short city tour
+      before hotel check-in.
+    </p>
+
+    <p><strong>Day 2: PADAR ISLAND – KOMODO ISLAND – PINK BEACH (Breakfast, Lunch)</strong><br>
+      Start island hopping with trekking at Padar Island, continue to Komodo Island
+      to see the Komodo dragons, and enjoy snorkeling at Pink Beach.
+    </p>
+
+    <p><strong>Day 3: MANTA POINT – FREE TIME (Breakfast)</strong><br>
+      Snorkeling at Manta Point (subject to sea conditions). Afternoon return
+      to Labuan Bajo with free time.
+    </p>
+
+    <p><strong>Day 4: LABUAN BAJO – DEPARTURE (Breakfast)</strong><br>
+      Breakfast and hotel check-out, followed by transfer to the airport.
+      Tour ends.
+    </p>
+  </div>
+</div>
+
 
     </div>
   </div>
@@ -355,65 +642,301 @@ footer a{color:#93c5fd;text-decoration:none}
 
     <div class="card-grid">
 
-      <div class="package-card">
-        <span class="badge">INTERNASIONAL</span>
-        <div class="package-title">Singapore City Highlights</div>
-        <div class="package-meta">3 Hari 2 Malam</div>
-        <div class="price">Rp8.000.000 / orang</div>
+      <!-- SINGAPORE -->
+<div class="package-card">
+  <span class="badge">INTERNATIONAL</span>
 
-        <div class="itinerary">
-          <p>Hari 1: City Tour Singapore</p>
-          <p>Hari 2: Universal Studios / Gardens by the Bay</p>
-          <p>Hari 3: Kepulangan</p>
-        </div>
-      </div>
+  <div class="package-image">
+    <img src="singapura.jpeg" alt="Singapore City Highlights">
+  </div>
 
-      <div class="package-card">
-        <span class="badge">INTERNASIONAL</span>
-        <div class="package-title">Thailand Fun Explorer</div>
-        <div class="package-meta">5 Hari 4 Malam</div>
-        <div class="price">Rp9.500.000 / orang</div>
+  <div class="package-title">Singapore City Highlights</div>
+  <div class="package-meta">3 Days 2 Nights</div>
+  <div class="price">Starting from Rp8.000.000 / person</div>
 
-        <div class="itinerary">
-          <p>Hari 1: Kedatangan Bangkok</p>
-          <p>Hari 2: Bangkok Culture Tour</p>
-          <p>Hari 3: Bangkok – Pattaya</p>
-          <p>Hari 4: Pattaya Free Time</p>
-          <p>Hari 5: Kepulangan</p>
-        </div>
-      </div>
+  <p class="package-desc">
+    A modern city tour featuring iconic landmarks and pop culture attractions,
+    perfect for families and couples.
+  </p>
 
-      <div class="package-card">
-        <span class="badge">INTERNASIONAL</span>
-        <div class="package-title">Malaysia City & Culture Experience</div>
-        <div class="package-meta">4 Hari 3 Malam</div>
-        <div class="price">Rp6.500.000 / orang</div>
+  <div class="sub-title">Destinations</div>
+  <ul>
+    <li>Marina Bay – Merlion Park – Universal Studios Singapore</li>
+  </ul>
 
-        <div class="itinerary">
-          <p>Hari 1: Kuala Lumpur City Tour</p>
-          <p>Hari 2: Batu Caves – Genting Highlands</p>
-          <p>Hari 3: Putrajaya – Shopping</p>
-          <p>Hari 4: Kepulangan</p>
-        </div>
-      </div>
+  <div class="sub-title">Facilities</div>
+  <ul>
+    <li>3★ / 4★ hotel accommodation</li>
+    <li>Local transportation (MRT & shuttle)</li>
+    <li>Universal Studios & Gardens by the Bay tickets (optional)</li>
+  </ul>
+
+  <div class="sub-title">Included</div>
+  <ul>
+    <li>Meals as per itinerary</li>
+    <li>Free entrance to selected tourist attractions</li>
+    <li>Guide service fee</li>
+  </ul>
+
+  <div class="sub-title">Excluded</div>
+  <ul>
+    <li>Flight tickets</li>
+    <li>Personal expenses</li>
+  </ul>
+
+  <div class="sub-title">Highlights</div>
+  <ul>
+    <li>Merlion Park</li>
+    <li>Universal Studios Singapore</li>
+    <li>Gardens by the Bay</li>
+  </ul>
+
+  <div class="itinerary">
+    <div class="sub-title">Brief Itinerary</div>
+
+    <p><strong>Day 1: ARRIVAL SINGAPORE – CITY TOUR (No Meals)</strong><br>
+      Arrival in Singapore. Meet and greet, followed by a city tour visiting
+      Merlion Park and Marina Bay Sands before hotel check-in.
+    </p>
+
+    <p><strong>Day 2: UNIVERSAL STUDIOS / GARDENS BY THE BAY (No Meals)</strong><br>
+      Free day to explore Universal Studios Singapore or Gardens by the Bay
+      based on guest preference.
+    </p>
+
+    <p><strong>Day 3: SINGAPORE – DEPARTURE (No Meals)</strong><br>
+      Free time until transfer to the airport for departure. Tour ends.
+    </p>
+  </div>
+</div>
+
+
+     <!-- THAILAND -->
+<div class="package-card">
+  <span class="badge">INTERNATIONAL</span>
+
+  <div class="package-image">
+    <img src="thailand.jpeg" alt="Thailand Fun Explorer">
+  </div>
+
+  <div class="package-title">Thailand Fun Explorer</div>
+  <div class="package-meta">5 Days 4 Nights</div>
+  <div class="price">Starting from Rp9.500.000 / person</div>
+
+  <p class="package-desc">
+    A perfect blend of culture, culinary experiences, and entertainment
+    in Thailand’s two most popular cities.
+  </p>
+
+  <div class="sub-title">Destinations</div>
+  <ul>
+    <li>Bangkok – Pattaya</li>
+  </ul>
+
+  <div class="sub-title">Facilities</div>
+  <ul>
+    <li>3★ / 4★ hotel accommodation</li>
+    <li>Local transportation</li>
+    <li>Professional guide & main attraction tickets</li>
+  </ul>
+
+  <div class="sub-title">Included</div>
+  <ul>
+    <li>Meals as per itinerary</li>
+    <li>Free entrance to tourist attractions</li>
+    <li>Guide service fee</li>
+  </ul>
+
+  <div class="sub-title">Excluded</div>
+  <ul>
+    <li>Flight tickets</li>
+    <li>Personal expenses</li>
+  </ul>
+
+  <div class="sub-title">Highlights</div>
+  <ul>
+    <li>Grand Palace</li>
+    <li>Floating Market</li>
+    <li>Pattaya Beach</li>
+  </ul>
+
+  <div class="itinerary">
+    <div class="sub-title">Brief Itinerary</div>
+
+    <p><strong>Day 1: ARRIVAL BANGKOK – CITY TOUR (No Meals)</strong><br>
+      Arrival in Bangkok. Meet and greet, followed by a short city tour
+      before hotel check-in.
+    </p>
+
+    <p><strong>Day 2: BANGKOK CULTURE TOUR (Breakfast)</strong><br>
+      Visit the Grand Palace, Wat Arun, and Floating Market.
+    </p>
+
+    <p><strong>Day 3: BANGKOK – PATTAYA (Breakfast)</strong><br>
+      Transfer to Pattaya, enjoy the beach and entertainment area.
+    </p>
+
+    <p><strong>Day 4: PATTAYA FREE TIME (Breakfast)</strong><br>
+      Free time or optional tours.
+    </p>
+
+    <p><strong>Day 5: BANGKOK – DEPARTURE (Breakfast)</strong><br>
+      Transfer to the airport for return flight. Tour ends.
+    </p>
+  </div>
+</div>
+
+
+     <!-- MALAYSIA -->
+<div class="package-card">
+  <span class="badge">INTERNATIONAL</span>
+
+  <div class="package-image">
+    <img src="malasya.jpeg" alt="Malaysia City & Culture Experience">
+  </div>
+
+  <div class="package-title">Malaysia City & Culture Experience</div>
+  <div class="package-meta">4 Days 3 Nights</div>
+  <div class="price">Starting from Rp6.500.000 / person</div>
+
+  <p class="package-desc">
+    Enjoy an unforgettable journey in Malaysia combining modern city life,
+    natural attractions, and iconic landmarks. This package is designed to
+    provide comfort and the best travel experience.
+  </p>
+
+  <div class="sub-title">Destinations</div>
+  <ul>
+    <li>Kuala Lumpur – Genting Highlands – Putrajaya</li>
+  </ul>
+
+  <div class="sub-title">Facilities</div>
+  <ul>
+    <li>3★ / 4★ hotel accommodation based on selected package</li>
+    <li>Air-conditioned local transportation during the tour</li>
+    <li>Airport transfer (pick-up & drop-off)</li>
+    <li>Professional tour guide</li>
+    <li>Entrance tickets to main tourist attractions as per itinerary</li>
+  </ul>
+
+  <div class="sub-title">Included</div>
+  <ul>
+    <li>Meals as per program</li>
+    <li>Free entrance to tourist attractions</li>
+    <li>Guide service fee</li>
+  </ul>
+
+  <div class="sub-title">Excluded</div>
+  <ul>
+    <li>Flight tickets</li>
+    <li>Personal expenses</li>
+  </ul>
+
+  <div class="sub-title">Highlights</div>
+  <ul>
+    <li>Petronas Twin Towers</li>
+    <li>Batu Caves</li>
+    <li>Genting Highlands</li>
+    <li>Putrajaya Mosque & Lake</li>
+  </ul>
+
+  <div class="itinerary">
+    <div class="sub-title">Brief Itinerary</div>
+
+    <p><strong>Day 1: ARRIVAL KUALA LUMPUR – CITY TOUR (No Meals)</strong><br>
+      Arrival at Kuala Lumpur International Airport. Meet and greet by
+      FindYourTrip representative. Short city tour including photo stop
+      at Petronas Twin Towers, Merdeka Square, and city center area before
+      hotel check-in.
+    </p>
+
+    <p><strong>Day 2: BATU CAVES – GENTING HIGHLANDS (Breakfast)</strong><br>
+      After breakfast, visit Batu Caves, one of Malaysia’s iconic religious
+      landmarks. Continue to Genting Highlands to enjoy the cool mountain
+      atmosphere, entertainment area, and shopping. Return to Kuala Lumpur
+      in the afternoon.
+    </p>
+
+    <p><strong>Day 3: PUTRAJAYA TOUR – SHOPPING (Breakfast)</strong><br>
+      Breakfast at hotel, then proceed to Putrajaya to visit Putra Mosque
+      and Putrajaya Lake. Continue with shopping tour at popular malls
+      before returning to hotel.
+    </p>
+
+    <p><strong>Day 4: KUALA LUMPUR – DEPARTURE (Breakfast)</strong><br>
+      Breakfast and free time until check-out. Transfer to the airport
+      for return flight. Tour ends.
+    </p>
+  </div>
+</div>
+
 
     </div>
   </div>
 
 </section>
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>PT FindYourTrip Global</h3>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Find<span>Your</span>Trip</h2>
       <p>Travel together, better.</p>
     </div>
-    <div>
-      <a href="#">Privacy Policy</a><br>
-      <a href="#">Terms & Conditions</a>
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h4>ABOUT US</h4>
+      <a href="#">Our Story</a>
+      <a href="#">Meet The Team</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact Us</a>
     </div>
-    <div>
-      Instagram • Twitter • Facebook
+
+    <!-- BOOKING -->
+    <div class="footer-col">
+      <h4>BOOKING</h4>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Travel Insurance</a>
+      <a href="#">Brochures</a>
+    </div>
+
+    <!-- CORPORATE -->
+    <div class="footer-col">
+      <h4>CORPORATE SERVICES</h4>
+      <a href="#">Corporate Travel</a>
+      <a href="#">MICE</a>
+      <a href="#">Group Travel</a>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-subscribe">
+      <h4>SUBSCRIBE</h4>
+      <p>Join our newsletter to get travel updates and special offers.</p>
+      <div class="subscribe-box">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARTNER -->
+  <div class="footer-partner">
+    <h4>OUR PARTNERS</h4>
+    <p>Ad-Evo Pte Ltd</p>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 PT FindYourTrip Global. All Rights Reserved.</p>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
     </div>
   </div>
 </footer>
