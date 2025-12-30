@@ -226,28 +226,182 @@ section{
 }
 
 /* ================= FOOTER ================= */
-footer{
-  background:#0f172a;
-  color:#fff;
-  padding:70px 8%;
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
+.footer{
+  background:linear-gradient(180deg,#0b1220,#020617);
+  color:#cbd5f5;
+  padding:90px 8% 0;
 }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px){
-  .about-wrapper,
-  .vm-grid,
-  .logo-meaning-wrapper{
-    grid-template-columns:1fr;
-  }
-  .logo-box{
-    margin-bottom:20px;
+.footer-container{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr 1.6fr;
+  gap:50px;
+  padding-bottom:70px;
+}
+
+.footer-brand h2{
+  font-size:32px;
+  color:#fff;
+  font-weight:800;
+}
+.footer-brand span{
+  color:var(--primary);
+}
+.footer-brand p{
+  margin-top:12px;
+  color:#94a3b8;
+}
+
+.footer-col h4,
+.footer-subscribe h4{
+  font-size:15px;
+  margin-bottom:22px;
+  color:#fff;
+  letter-spacing:1px;
+}
+
+.footer-col a{
+  display:block;
+  text-decoration:none;
+  color:#94a3b8;
+  margin-bottom:14px;
+  font-size:14px;
+}
+.footer-col a:hover{
+  color:#fff;
+}
+
+.footer-subscribe p{
+  font-size:14px;
+  color:#94a3b8;
+  margin-bottom:18px;
+}
+
+.subscribe-box{
+  display:flex;
+  gap:10px;
+}
+.subscribe-box input{
+  flex:1;
+  padding:14px 16px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+.subscribe-box button{
+  padding:14px 22px;
+  border:none;
+  border-radius:10px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* PARTNER */
+.footer-partner{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:35px 0;
+  text-align:center;
+}
+.footer-partner h4{
+  color:#fff;
+  margin-bottom:8px;
+}
+.footer-partner p{
+  color:#94a3b8;
+}
+
+/* BOTTOM */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:25px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  color:#94a3b8;
+}
+.footer-social a{
+  margin-left:18px;
+  text-decoration:none;
+  color:#94a3b8;
+}
+.footer-social a:hover{
+  color:#fff;
+}
+
+@media(max-width:1000px){
+  .footer-container{
+    grid-template-columns:1fr 1fr;
   }
 }
+@media(max-width:600px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+  .footer-bottom{
+    flex-direction:column;
+    gap:15px;
+  }
+}
+
+
+.collaboration{
+  background:#f2f5f9;
+  padding:120px 8%;
+  text-align:center;
+}
+
+.collaboration h2{
+  font-size:36px;
+  margin-bottom:50px;
+  font-weight:700;
+}
+
+.collab-card{
+  max-width:1000px;
+  margin:0 auto;
+  background:#ffffff;
+  padding:60px;
+  border-radius:32px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
+
+.collab-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  align-items:center;
+}
+
+.collab-grid img{
+  max-width:180px;
+  width:100%;
+  margin:auto;
+  filter:grayscale(100%);
+  opacity:.85;
+  transition:.3s ease;
+}
+
+.collab-grid img:hover{
+  filter:none;
+  opacity:1;
+  transform:scale(1.05);
+}
+
+@media(max-width:768px){
+  .collab-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .collab-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 
@@ -274,13 +428,12 @@ footer{
     <source src="travell.mp4" type="video/mp4">
   </video>
   <div class="hero-content">
-    <h1>Jelajahi Dunia Bersama Trip Terbaik</h1>
+    <h1>Explore the World with the Best Trips</h1>
     <p>
-      Temukan teman perjalanan sefrekuensi dan rasakan
-      pengalaman traveling yang aman, seru, dan berkesan.
+      Find like-minded travel companions and experience a safe, exciting, and memorable travel experience.
     </p>
     <button onclick="location.href='find-trip.html'" class="cta">
-      Mulai Petualangan
+     Start the Adventure
     </button>
   </div>
 </div>
@@ -354,22 +507,89 @@ footer{
 
 </section>
 
+<!-- COLLABORATION SECTION -->
+<section class="collaboration">
+  <h2>FIND YOUR TRIP COLLABORATES WITH</h2>
+
+  <div class="collab-card">
+    <div class="collab-grid">
+      <img src="wonderfull.jpeg" alt="Partner 1">
+      <img src="santika.jpeg" alt="Partner 2">
+      <img src="garuda.jpeg" alt="Partner 3">
+      <img src="marriot.jpeg" alt="Partner 4">
+      <img src="airasia.jpeg" alt="Partner 5">
+      <img src="mastercard.jpeg" alt="Partner 6">
+    </div>
+  </div>
+</section>
+
+
 <!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>PT FindYourTrip Global</h3>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Find<span>Your</span>Trip</h2>
       <p>Travel together, better.</p>
     </div>
-    <div>
-      <a href="#">Privacy Policy</a><br>
-      <a href="#">Terms & Conditions</a>
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h4>ABOUT US</h4>
+      <a href="#">Our Story</a>
+      <a href="#">Meet The Team</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact Us</a>
     </div>
-    <div>
-      Instagram • Twitter • Facebook
+
+    <!-- BOOKING -->
+    <div class="footer-col">
+      <h4>BOOKING</h4>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Travel Insurance</a>
+      <a href="#">Brochures</a>
+    </div>
+
+    <!-- CORPORATE -->
+    <div class="footer-col">
+      <h4>CORPORATE SERVICES</h4>
+      <a href="#">Corporate Travel</a>
+      <a href="#">MICE</a>
+      <a href="#">Group Travel</a>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-subscribe">
+      <h4>SUBSCRIBE</h4>
+      <p>Join our newsletter to get travel updates and special offers.</p>
+      <div class="subscribe-box">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARTNER -->
+  <div class="footer-partner">
+    <h4>OUR PARTNERS</h4>
+    <p>Ad-Evo Pte Ltd</p>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 PT FindYourTrip Global. All Rights Reserved.</p>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>
