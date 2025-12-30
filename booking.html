@@ -162,21 +162,128 @@ section{
   box-shadow:0 14px 30px rgba(34,193,220,.45);
 }
 
+
 /* ================= FOOTER ================= */
-footer{
-  background:#0f172a;
-  color:#fff;
-  padding:70px 8%;
+.footer{
+  background:linear-gradient(180deg,#0b1220,#020617);
+  color:#cbd5f5;
+  padding:90px 8% 0;
 }
-.footer-grid{
+
+.footer-container{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
+  grid-template-columns:1.3fr 1fr 1fr 1fr 1.6fr;
+  gap:50px;
+  padding-bottom:70px;
 }
-footer a{
-  color:#93c5fd;
+
+.footer-brand h2{
+  font-size:32px;
+  color:#fff;
+  font-weight:800;
+}
+.footer-brand span{
+  color:var(--primary);
+}
+.footer-brand p{
+  margin-top:12px;
+  color:#94a3b8;
+}
+
+.footer-col h4,
+.footer-subscribe h4{
+  font-size:15px;
+  margin-bottom:22px;
+  color:#fff;
+  letter-spacing:1px;
+}
+
+.footer-col a{
+  display:block;
   text-decoration:none;
+  color:#94a3b8;
+  margin-bottom:14px;
+  font-size:14px;
 }
+.footer-col a:hover{
+  color:#fff;
+}
+
+.footer-subscribe p{
+  font-size:14px;
+  color:#94a3b8;
+  margin-bottom:18px;
+}
+
+.subscribe-box{
+  display:flex;
+  gap:10px;
+}
+.subscribe-box input{
+  flex:1;
+  padding:14px 16px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+.subscribe-box button{
+  padding:14px 22px;
+  border:none;
+  border-radius:10px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* PARTNER */
+.footer-partner{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:35px 0;
+  text-align:center;
+}
+.footer-partner h4{
+  color:#fff;
+  margin-bottom:8px;
+}
+.footer-partner p{
+  color:#94a3b8;
+}
+
+/* BOTTOM */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:25px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  color:#94a3b8;
+}
+.footer-social a{
+  margin-left:18px;
+  text-decoration:none;
+  color:#94a3b8;
+}
+.footer-social a:hover{
+  color:#fff;
+}
+
+@media(max-width:1000px){
+  .footer-container{
+    grid-template-columns:1fr 1fr;
+  }
+}
+@media(max-width:600px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+  .footer-bottom{
+    flex-direction:column;
+    gap:15px;
+  }
+}
+
 </style>
 </head>
 
@@ -202,7 +309,7 @@ footer a{
   <img src="travel.png" alt="FindYourTrio Booking">
   <div class="hero-content">
     <h1>Booking & Payment</h1>
-    <p>Isi data Anda untuk memesan paket perjalanan</p>
+    <p>Fill in your details to order a travel package</p>
   </div>
 </div>
 
@@ -210,18 +317,18 @@ footer a{
 <section>
   <div class="booking-card">
     <h2>Form Booking</h2>
-    <p>Pastikan data yang Anda isi sudah benar sebelum melanjutkan.</p>
+    <p>Make sure the data you entered is correct before continuing.</p>
 
     <form>
-      <label>Nama Lengkap</label>
-      <input type="text" placeholder="Masukkan nama lengkap">
+      <label>Full name</label>
+      <input type="text" placeholder="Enter full name">
 
       <label>Email</label>
-      <input type="email" placeholder="Masukkan email aktif">
+      <input type="email" placeholder="Enter an active email">
 
-      <label>Pilih Paket Wisata</label>
+      <label>Select a Tour Package</label>
       <select>
-        <option disabled selected>Pilih Paket</option>
+        <option disabled selected>Select Package</option>
         <option>Bali Explorer Adventure</option>
         <option>Yogyakarta Culture & Heritage</option>
         <option>Labuan Bajo Komodo Adventure</option>
@@ -229,35 +336,85 @@ footer a{
         <option>Thailand Fun Explorer</option>
       </select>
 
-      <label>Metode Pembayaran</label>
+      <label>Payment Methods</label>
       <select>
-        <option disabled selected>Pilih Metode</option>
+        <option disabled selected>Select Method</option>
         <option>Transfer Bank</option>
         <option>E-Wallet</option>
         <option>Kartu Kredit</option>
       </select>
 
-      <button class="btn-submit">Konfirmasi Booking</button>
+      <button class="btn-submit">Booking Confirmation</button>
     </form>
   </div>
 </section>
 
+
 <!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>FindYourTrip</h3>
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Find<span>Your</span>Trip</h2>
       <p>Travel together, better.</p>
     </div>
-    <div>
-      <a href="#">Privacy Policy</a><br>
-      <a href="#">Terms & Conditions</a>
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h4>ABOUT US</h4>
+      <a href="#">Our Story</a>
+      <a href="#">Meet The Team</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact Us</a>
     </div>
-    <div>
-      Instagram • Twitter • Facebook
+
+    <!-- BOOKING -->
+    <div class="footer-col">
+      <h4>BOOKING</h4>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Travel Insurance</a>
+      <a href="#">Brochures</a>
+    </div>
+
+    <!-- CORPORATE -->
+    <div class="footer-col">
+      <h4>CORPORATE SERVICES</h4>
+      <a href="#">Corporate Travel</a>
+      <a href="#">MICE</a>
+      <a href="#">Group Travel</a>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-subscribe">
+      <h4>SUBSCRIBE</h4>
+      <p>Join our newsletter to get travel updates and special offers.</p>
+      <div class="subscribe-box">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARTNER -->
+  <div class="footer-partner">
+    <h4>OUR PARTNERS</h4>
+    <p>Ad-Evo Pte Ltd</p>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 PT FindYourTrip Global. All Rights Reserved.</p>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>
