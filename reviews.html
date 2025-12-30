@@ -153,27 +153,126 @@ section{
 }
 
 /* ================= FOOTER ================= */
-footer{
-  background:#0f172a;
-  color:#fff;
-  padding:70px 8%;
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-}
-footer a{
-  color:#93c5fd;
-  text-decoration:none;
+.footer{
+  background:linear-gradient(180deg,#0b1220,#020617);
+  color:#cbd5f5;
+  padding:90px 8% 0;
 }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px){
-  .review-grid{
-    grid-template-columns:1fr;
+.footer-container{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr 1.6fr;
+  gap:50px;
+  padding-bottom:70px;
+}
+
+.footer-brand h2{
+  font-size:32px;
+  color:#fff;
+  font-weight:800;
+}
+.footer-brand span{
+  color:var(--primary);
+}
+.footer-brand p{
+  margin-top:12px;
+  color:#94a3b8;
+}
+
+.footer-col h4,
+.footer-subscribe h4{
+  font-size:15px;
+  margin-bottom:22px;
+  color:#fff;
+  letter-spacing:1px;
+}
+
+.footer-col a{
+  display:block;
+  text-decoration:none;
+  color:#94a3b8;
+  margin-bottom:14px;
+  font-size:14px;
+}
+.footer-col a:hover{
+  color:#fff;
+}
+
+.footer-subscribe p{
+  font-size:14px;
+  color:#94a3b8;
+  margin-bottom:18px;
+}
+
+.subscribe-box{
+  display:flex;
+  gap:10px;
+}
+.subscribe-box input{
+  flex:1;
+  padding:14px 16px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+.subscribe-box button{
+  padding:14px 22px;
+  border:none;
+  border-radius:10px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* PARTNER */
+.footer-partner{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:35px 0;
+  text-align:center;
+}
+.footer-partner h4{
+  color:#fff;
+  margin-bottom:8px;
+}
+.footer-partner p{
+  color:#94a3b8;
+}
+
+/* BOTTOM */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:25px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  color:#94a3b8;
+}
+.footer-social a{
+  margin-left:18px;
+  text-decoration:none;
+  color:#94a3b8;
+}
+.footer-social a:hover{
+  color:#fff;
+}
+
+@media(max-width:1000px){
+  .footer-container{
+    grid-template-columns:1fr 1fr;
   }
 }
+@media(max-width:600px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+  .footer-bottom{
+    flex-direction:column;
+    gap:15px;
+  }
+}
+
 </style>
 </head>
 
@@ -199,17 +298,17 @@ footer a{
  <img src="travel.png" alt="FindYourTrio Support">
   <div class="hero-content">
     <h1>User Reviews</h1>
-    <p>Pengalaman nyata dari para traveler FindYourTrip</p>
+    <p>Real experiences from FindYourTrip travelers</p>
   </div>
 </div>
 
 
 
 <section>
-  <h2 class="section-title">Apa Kata Mereka?</h2>
+  <h2 class="section-title">What Do They Say?</h2>
   <p class="section-desc">
-    Kepuasan pelanggan adalah prioritas kami.
-    Berikut beberapa ulasan dari traveler yang telah bergabung bersama FindYourTrip.
+   Customer satisfaction is our priority.
+Here are some reviews from travelers who have joined FindYourTrip.
   </p>
 
   <div class="review-grid">
@@ -217,8 +316,7 @@ footer a{
     <div class="review-card">
       <div class="stars">★★★★★</div>
       <div class="review-text">
-        Trip terbaik yang pernah saya ikuti. Timnya profesional,
-        itinerary rapi, dan dapat teman perjalanan yang seru.
+       The best trip I've ever been on. The team was professional, the itinerary was immaculate, and I had fun traveling companions.
       </div>
       <div class="user">
         <div class="user-name">Andi Pratama</div>
@@ -229,8 +327,7 @@ footer a{
     <div class="review-card">
       <div class="stars">★★★★☆</div>
       <div class="review-text">
-        Pengalaman liburan yang aman dan nyaman.
-        Sangat cocok buat solo traveler yang ingin cari trip perjalanan.
+        A safe and comfortable holiday experience. Perfect for solo travelers looking for a unique trip.
       </div>
       <div class="user">
         <div class="user-name">Siti Rahma</div>
@@ -241,8 +338,7 @@ footer a{
     <div class="review-card">
       <div class="stars">★★★★★</div>
       <div class="review-text">
-        Awalnya ragu, tapi ternyata seru banget.
-        Trio solid, guide ramah, dan spot wisatanya mantap.
+       I was skeptical at first, but it turned out to be a blast.A solid trio, a friendly guide, and great spots.
       </div>
       <div class="user">
         <div class="user-name">Rizky Maulana</div>
@@ -253,18 +349,67 @@ footer a{
   </div>
 </section>
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>FindYourTrip</h3>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <h2>Find<span>Your</span>Trip</h2>
       <p>Travel together, better.</p>
     </div>
-    <div>
-      <a href="#">Privacy Policy</a><br>
-      <a href="#">Terms & Conditions</a>
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h4>ABOUT US</h4>
+      <a href="#">Our Story</a>
+      <a href="#">Meet The Team</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact Us</a>
     </div>
-    <div>
-      Instagram • Twitter • Facebook
+
+    <!-- BOOKING -->
+    <div class="footer-col">
+      <h4>BOOKING</h4>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Travel Insurance</a>
+      <a href="#">Brochures</a>
+    </div>
+
+    <!-- CORPORATE -->
+    <div class="footer-col">
+      <h4>CORPORATE SERVICES</h4>
+      <a href="#">Corporate Travel</a>
+      <a href="#">MICE</a>
+      <a href="#">Group Travel</a>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="footer-subscribe">
+      <h4>SUBSCRIBE</h4>
+      <p>Join our newsletter to get travel updates and special offers.</p>
+      <div class="subscribe-box">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARTNER -->
+  <div class="footer-partner">
+    <h4>OUR PARTNERS</h4>
+    <p>Ad-Evo Pte Ltd</p>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2025 PT FindYourTrip Global. All Rights Reserved.</p>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
     </div>
   </div>
 </footer>
